@@ -1,0 +1,13 @@
+.btn-default.white {
+    color: black !important;
+    background: white !important;
+}
+
+.pagination li.active {
+    background-color: gainsboro;
+}
+
+ul.pagination {
+    margin-top: 10px;
+    float: right;
+}
