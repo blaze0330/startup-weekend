@@ -12,7 +12,7 @@ class MenuHandler
 	{
 		$ms = [
 			["url" => "/admin", "title" => "Dashboard", "icon" => "fa fa-dashboard", "class" => "", "submenus" => []],
-			["url" => "/admin", "title" => "Administración", "icon" => "fa fa-files-o", "class" => "",
+			["url" => "/admin-menu", "title" => "Administración", "icon" => "fa fa-files-o", "class" => "",
 				"submenus" => [
 					["url" => "/admin/usuario", "title" => "Usuarios", "class" => ""],
 				],
