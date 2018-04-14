@@ -11,7 +11,7 @@ class MenuHandler
 	public static function items(): array
 	{
 		$ms = [
-			["url" => "/", "title" => "Dashboard", "icon" => "fa fa-dashboard", "class" => "", "submenus" => []],
+			["url" => "/admin", "title" => "Dashboard", "icon" => "fa fa-dashboard", "class" => "", "submenus" => []],
 			["url" => "/admin", "title" => "Administración", "icon" => "fa fa-files-o", "class" => "",
 				"submenus" => [
 					["url" => "/admin/usuario", "title" => "Usuarios", "class" => ""],
