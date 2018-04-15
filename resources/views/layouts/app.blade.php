@@ -52,7 +52,7 @@
                                         <div class="csi-logo">
                                             <a href="/#home">
                                                 <img src="/assets/img/logo-new.png" alt="Logo"
-                                                     style="padding-bottom: 5px;width: 213px;margin-top: 0;margin-left: 8px;"/>
+                                                     style="width: 213px;margin-top: 0;margin-left: 8px;"/>
                                             </a>
                                         </div>
                                     </div>
@@ -65,7 +65,7 @@
                                             <li><a href="/#contacto">CONTACTO</a></li>
                                             <li>
                                                 <a href="/admin" class="csi-scroll csi-btn"
-                                                   style="border: 2px solid #38769e; background: #38769e;">INGRESAR</a>
+                                                   style="border: 2px solid #eb20be; background: #eb20be;">INGRESAR</a>
                                             </li>
                                         </ul>
                                     </div>

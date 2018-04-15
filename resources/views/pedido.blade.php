@@ -65,13 +65,17 @@
 
     <!--ABOUT-->
     <section>
-        <div class="col-md-3">
+        <div class="col-md-3 text-center">
             <h3>Paquetes</h3>
             @foreach($paquetes as $paquete)
                 <div class="paqueteItem" onclick="location.href='?id_paquete={{ $paquete->id }}'">
                     {{ $paquete->name }}
                 </div>
             @endforeach
+            <div class="hidden-md hidden-lg">
+                <div class="clearfix"></div>
+                <br>
+            </div>
         </div>
         <div class="col-md-9" style="padding: 0;">
             <div id="csi-about" class="csi-about" style="background: #eaeaea;">
@@ -85,10 +89,13 @@
                     <div>
                         <div style="margin-top: -100px">
                             <div class="text-center">
+                                <div class="hidden-md hidden-lg">
+                                    <br><br>
+                                </div>
                                 <h3>Categorías</h3>
                                 <div class="sexCategories">
                                     @foreach($categorias as $categoria)
-                                        <div class="col-md-2">
+                                        <div class="col-md-2 col-sm-6 col-xs-6">
                                             <div class="categoryItem"
                                                  onclick="location.href='?id_category={{ $categoria->id }}';">
                                                 <img src="{{ $categoria->image }}" alt="Categoría"/>
