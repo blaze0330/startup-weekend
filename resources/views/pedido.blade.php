@@ -53,57 +53,87 @@
         .categoryItem:hover {
             background: white;
         }
+
+        .paqueteItem {
+            cursor: pointer;
+        }
+
+        .paqueteItem:hover {
+            text-decoration: underline;
+        }
     </style>
 
     <!--ABOUT-->
     <section>
-        <div id="csi-about" class="csi-about" style="background: #eaeaea;">
-            <div class="csi-inner">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-12 col-xs-12 col-md-12 text-center">
-                            <div class="sexCategories">
-                                @foreach(\App\Models\Admin\Categoria::get() as $categoria)
-                                    <div class="col-md-2">
-                                        <div class="categoryItem">
-                                            <img src="{{ $categoria->image }}" alt="Categoría"/>
-                                            <div class="categoryName">
-                                            <!--{{ $categoria->name }}-->
+        <div class="col-md-3">
+            <h3>Paquetes</h3>
+            @foreach($paquetes as $paquete)
+                <div class="paqueteItem" onclick="location.href='?id_paquete={{ $paquete->id }}'">
+                    {{ $paquete->name }}
+                </div>
+            @endforeach
+        </div>
+        <div class="col-md-9" style="padding: 0;">
+            <div id="csi-about" class="csi-about" style="background: #eaeaea;">
+                @if (count($_GET) > 0)
+                    <div class="limiar text-center" style="padding-top: 20px; ">
+                        <a class="csi-btn csi-btn-brand"
+                           href="/haz-tu-pedido">LIMPIAR FILTROS</a>
+                    </div>
+                @endif
+                <div class="csi-inner">
+                    <div>
+                        <div style="margin-top: -100px">
+                            <div class="text-center">
+                                <h3>Categorías</h3>
+                                <div class="sexCategories">
+                                    @foreach($categorias as $categoria)
+                                        <div class="col-md-2">
+                                            <div class="categoryItem"
+                                                 onclick="location.href='?id_category={{ $categoria->id }}';">
+                                                <img src="{{ $categoria->image }}" alt="Categoría"/>
+                                                <div class="categoryName">
+                                                <!--{{ $categoria->name }}-->
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                @endforeach
-                            </div>
-                            <div class="clearfix"></div>
-                            <hr>
-                            <div class="sexItems">
-                                @foreach (\App\Models\Admin\Producto::get() as $producto)
-                                    <div class="col-md-4">
-                                        <div class="sexItem">
-                                            <div class="sexItemImage">
-                                                <img src="{{ $producto->image }}" style="height: 250px;" alt="product">
-                                            </div>
-                                            <div class="sexItemText">
-                                                {{ $producto->name }}
-                                            </div>
-                                            <div class="sexItemCheckbox">
+                                    @endforeach
+                                </div>
+                                <div class="clearfix"></div>
+                                <br>
+                                <hr>
+                                <h3>Productos</h3>
+                                <div class="sexItems">
+                                    @foreach ($productos as $producto)
+                                        <div class="col-md-4">
+                                            <div class="sexItem">
+                                                <div class="sexItemImage">
+                                                    <img src="{{ $producto->image }}" style="height: 250px;"
+                                                         alt="product">
+                                                </div>
+                                                <div class="sexItemText">
+                                                    {{ $producto->name }}
+                                                </div>
+                                                <div class="sexItemCheckbox">
 
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                @endforeach
-                            </div>
-                            <div class="clearfix"></div>
-                            <br><br>
-                            <div class="btn-area">
-                                <a class="csi-btn csi-btn-brand"
-                                   href="/register">REALIZAR COMPRA</a>
+                                    @endforeach
+                                </div>
+                                <div class="clearfix"></div>
+                                <br><br>
+                                <div class="btn-area">
+                                    <a class="csi-btn csi-btn-brand"
+                                       href="/register">REALIZAR COMPRA</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div><!-- //.CONTAINER -->
-            </div><!-- //.INNER -->
+                    </div><!-- //.CONTAINER -->
+                </div><!-- //.INNER -->
+            </div>
         </div>
+        <div class="clearfix"></div>
     </section>
     <!--ABOUT END-->
     <script>
