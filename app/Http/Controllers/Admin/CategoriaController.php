@@ -26,7 +26,7 @@ class CategoriaController extends Controller
 	 */
 	public function index()
 	{
-		$categorias = Categoria::orderBy("id","DESC")->paginate(10);
+		$categorias = Categoria::orderBy("id", "DESC")->paginate(10);
 		return view('admin.categoria.index')->with(['categorias' => $categorias]);
 	}
 
@@ -46,6 +46,14 @@ class CategoriaController extends Controller
 	{
 		$categoria = new Categoria();
 		$categoria->fill($request->only('name'));
+		if ($request->file('image') != null) {
+			$file = $request->file('image');
+			$imageName = $file->getClientOriginalName();
+
+			$categoria->image = '/uploads/images/' . md5($imageName . time()) . '.' . $file->getClientOriginalExtension();
+
+			$file->move(base_path() . '/public/uploads/', md5($imageName . time()) . '.' . $file->getClientOriginalExtension());
+		}
 		$categoria->save();
 
 		Session::flash('message', 'Correcto, se ha dado de alta la categoría con éxito.');
@@ -55,8 +63,9 @@ class CategoriaController extends Controller
 	}
 
 	/**
-	 * @param Categoria $categoria
+	 * @param int $idCategoria
 	 * @return mixed
+	 * @internal param Categoria $categoria
 	 */
 	public function edit(int $idCategoria)
 	{
@@ -66,14 +75,22 @@ class CategoriaController extends Controller
 
 	/**
 	 * @param Request $request
-	 * @param Categoria $categoria
+	 * @param int $idCategoria
 	 * @return mixed
+	 * @internal param Categoria $categoria
 	 */
 	public function update(Request $request, int $idCategoria)
 	{
 		$categoria = Categoria::findOrFail($idCategoria);
 		$categoria->update($request->only('name'));
+		if ($request->file('image') != null) {
+			$file = $request->file('image');
+			$imageName = $file->getClientOriginalName();
 
+			$categoria->image = '/uploads/images/' . md5($imageName . time()) . '.' . $file->getClientOriginalExtension();
+
+			$file->move(base_path() . '/public/uploads/', md5($imageName . time()) . '.' . $file->getClientOriginalExtension());
+		}
 		$categoria->save();
 		Session::flash('message', 'Correcto, los datos de la categoría han sido cambiados con éxito.');
 		Session::flash('tipo', 'success');

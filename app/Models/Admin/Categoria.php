@@ -9,7 +9,7 @@ class Categoria extends Model
 {
 	use SoftDeletes;
 
-	protected $fillable = ['name'];
+	protected $fillable = ['name', 'image'];
 
 	protected $dates = ['deleted_at'];
 }

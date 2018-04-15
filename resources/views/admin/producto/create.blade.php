@@ -27,7 +27,7 @@
                                     <label for="price" class="form-label">
                                         Precio
                                     </label>
-                                    <input type="number" name="price" id="price"
+                                    <input type="number" name="price" id="price" step="any"
                                            value="{{ old('price') }}"
                                            class="form-control" required>
                                     <span class="material-input"></span>

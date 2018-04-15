@@ -4,12 +4,12 @@
     <div class="page dashboard-page">
         <div class="row">
             <div class="col-md-12">
-                <h3>Editar Producto</h3>
+                <h3>Nuevo Paquete</h3>
                 <div class="panel panel-primary">
                     <div class="panel-heading">Rellene los campos</div>
 
                     <div class="panel-body">
-                        {{ Form::model($producto, array('action' => array('Admin\ProductoController@update', $producto->id), 'method' => 'PUT', 'enctype'=>'multipart/form-data')) }}
+                        {{ Form::open(array('url' => url('/admin/paquete'), 'enctype'=>'multipart/form-data')) }}
                         <div class="boxs-body">
                             <div class="col-md-6">
                                 <div class="form-group is-empty">
@@ -17,18 +17,18 @@
                                         Nombre
                                     </label>
                                     <input type="text" name="name" id="name"
-                                           value="{{ $producto->name }}"
+                                           value="{{ old('name') }}"
                                            class="form-control" required>
                                     <span class="material-input"></span>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group is-empty">
-                                    <label for="price" class="form-label">
-                                        Precio
+                                    <label for="keywords" class="form-label">
+                                        Palabras Clave (Separadas por un coma)
                                     </label>
-                                    <input type="number" name="price" id="price" step="any"
-                                           value="{{ $producto->price }}"
+                                    <input type="text" name="keywords" id="keywords"
+                                           value="{{ old('keywords') }}"
                                            class="form-control" required>
                                     <span class="material-input"></span>
                                 </div>
@@ -39,20 +39,20 @@
                                         Descripción
                                     </label>
                                     <textarea name="description" id="description" cols="30" class="form-control"
-                                              rows="10">{{ $producto->description }}</textarea>
+                                              rows="10">{{ old('description') }}</textarea>
                                     <span class="material-input"></span>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group is-empty">
-                                    <label for="id_category" class="form-label">
-                                        Categoría
+                                    <label for="productos" class="form-label">
+                                        Productos
                                     </label>
-                                    <select name="rol" class="form-control" id="id_category" required>
-                                        @foreach ($categorias as $categoria)
-                                            <option value="{{ $categoria->id }}"
-                                                    {{ $categoria->id == $producto->id_category ? 'selected' : '' }}>
-                                                {{ $categoria->name }}
+                                    <select name="productos[]" class="form-control select2" id="productos" multiple
+                                            required>
+                                        @foreach ($productos as $producto)
+                                            <option value="{{ $producto->id }}">
+                                                {{ $producto->name }}
                                             </option>
                                         @endforeach
                                     </select>
@@ -61,17 +61,17 @@
                             <div class="col-md-6">
                                 <div class="form-group is-empty">
                                     <label for="image" class="form-label">
-                                        Imagen (Subirla en caso de reemplazar)
+                                        Imagen
                                     </label>
                                     <input type="file" name="image" id="image"
-                                           class="form-control">
+                                           class="form-control" required>
                                     <span class="material-input"></span>
                                 </div>
                             </div>
                             <div class="clearfix"></div>
 
                             {{ Form::submit('Guardar', array('class' => 'btn btn-raised btn-primary ')) }}
-                            <a href="{{ URL::previous()  }}" class="btn btn-raised btn-default">Cancelar</a>
+                            <a href="{{ url('/admin/paquete') }}" class="btn btn-raised btn-default">Cancelar</a>
                             {{ Form::close() }}
                         </div>
                     </div>
@@ -79,4 +79,9 @@
             </div>
         </div>
     </div>
+    <script>
+        $(function () {
+            $(".select2").select2();
+        });
+    </script>
 @endsection

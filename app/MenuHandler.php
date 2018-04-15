@@ -17,6 +17,7 @@ class MenuHandler
 					["url" => "/admin/usuario", "title" => "Usuarios", "class" => ""],
 					["url" => "/admin/categoria", "title" => "Categorías", "class" => ""],
 					["url" => "/admin/producto", "title" => "Productos", "class" => ""],
+					["url" => "/admin/paquete", "title" => "Paquetes", "class" => ""],
 				],
 				"rol" => [
 					User::ADMIN_GLOBAL

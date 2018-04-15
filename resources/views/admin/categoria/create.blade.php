@@ -9,7 +9,7 @@
                     <div class="panel-heading">Rellene los campos</div>
 
                     <div class="panel-body">
-                        {{ Form::open(array('url' => url('/admin/categoria'))) }}
+                        {{ Form::open(array('url' => url('/admin/categoria'), 'enctype'=>'multipart/form-data')) }}
                         <div class="boxs-body">
                             <div class="col-md-6">
                                 <div class="form-group is-empty">
@@ -18,6 +18,16 @@
                                     </label>
                                     <input type="text" name="name" id="name"
                                            value="{{ old('name') }}"
+                                           class="form-control" required>
+                                    <span class="material-input"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group is-empty">
+                                    <label for="image" class="form-label">
+                                        Imagen
+                                    </label>
+                                    <input type="file" name="image" id="image"
                                            class="form-control" required>
                                     <span class="material-input"></span>
                                 </div>

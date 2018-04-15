@@ -28,4 +28,5 @@ Route::prefix('/admin')->group(function () {
 	Route::resource('/usuario', 'Admin\UsuarioController');
 	Route::resource('/categoria', 'Admin\CategoriaController');
 	Route::resource('/producto', 'Admin\ProductoController');
+	Route::resource('/paquete', 'Admin\PaqueteController');
 });
