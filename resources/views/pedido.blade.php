@@ -127,6 +127,8 @@
                                         @endif
 										<?php $i++; ?>
                                     @endforeach
+
+                                    {{ $productos->render() }}
                                 </div>
                                 <div class="clearfix"></div>
                                 <br><br>
