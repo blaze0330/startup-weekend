@@ -21,8 +21,11 @@ Route::get('/home', function () {
 });
 
 Route::get('/', 'HomeController@index');
+Route::get('/haz-tu-pedido', 'HomeController@hazTuPedido');
 
 Route::prefix('/admin')->group(function () {
 	Route::get('/', 'Admin\DashboardController@index');
 	Route::resource('/usuario', 'Admin\UsuarioController');
+	Route::resource('/categoria', 'Admin\CategoriaController');
+	Route::resource('/producto', 'Admin\ProductoController');
 });

@@ -17,13 +17,18 @@ use Illuminate\Support\Facades\Session;
 
 class HomeController extends Controller
 {
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+	/**
+	 * Show the application dashboard.
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function index()
 	{
-		return view('index');
+		return view('index', ['pageTheme'=>'home']);
+	}
+
+	public function hazTuPedido()
+	{
+    	return view('pedido', ['pageTheme'=>'page page-template']);
 	}
 }

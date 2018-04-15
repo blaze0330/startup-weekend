@@ -15,6 +15,8 @@ class MenuHandler
 			["url" => "/admin-menu", "title" => "Administración", "icon" => "fa fa-files-o", "class" => "",
 				"submenus" => [
 					["url" => "/admin/usuario", "title" => "Usuarios", "class" => ""],
+					["url" => "/admin/categoria", "title" => "Categorías", "class" => ""],
+					["url" => "/admin/producto", "title" => "Productos", "class" => ""],
 				],
 				"rol" => [
 					User::ADMIN_GLOBAL

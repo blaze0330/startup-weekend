@@ -15,7 +15,7 @@ class script
 	function getPage()
 	{
 		$ch = curl_init();
-		curl_setopt($ch, CURLOPT_URL, "https://es.surveymonkey.com/r/3BP6KSX");
+		curl_setopt($ch, CURLOPT_URL, "https://es.surveymonkey.com/r/T697B9D");
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 		curl_setopt($ch, CURLOPT_HEADERFUNCTION,
 			function ($curl, $header) use (&$headers) {
@@ -48,7 +48,7 @@ class script
 			//echo "V => " . $concat . "<br><br>";
 		}
 		$this->headers = $headers;
-		$response = str_replace('action=""', 'action="http://es.surveymonkey.com/r/3BP6KSX"', $response);
+		$response = str_replace('action=""', 'action="http://es.surveymonkey.com/r/T697B9D"', $response);
 
 		$r = explode('<input type="hidden" id="survey_data" name="survey_data" value=', $response);
 		$r2 = explode('"', $r[1]);

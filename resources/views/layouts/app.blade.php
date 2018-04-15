@@ -25,7 +25,7 @@
     <link id="csi-master-style" rel="stylesheet" href="/assets/css/custom.css" media="all"/>
     <script src="/assets/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
-<body class="home">
+<body class="{{ $pageTheme }}">
 
 <!--[if lt IE 8]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
@@ -63,6 +63,10 @@
                                             <li><a href="/#faqs">PREGUNTAS FRECUENTES</a></li>
                                             <li><a href="/#hazTuPedido">HAZ TU PEDIDO</a></li>
                                             <li><a href="/#contacto">CONTACTO</a></li>
+                                            <li>
+                                                <a href="/admin" class="csi-scroll csi-btn"
+                                                   style="border: 2px solid #38769e; background: #38769e;">INGRESAR</a>
+                                            </li>
                                         </ul>
                                     </div>
                                     <!--/.nav-collapse -->
