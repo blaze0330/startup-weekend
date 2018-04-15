@@ -16,7 +16,7 @@
          style="background-image: url('{{ url('/assets/images/login-bg.jpg') }}'); background-size: cover; background-position: top center;">
         <div class="container">
             <div class="row">
-                <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 text-center" style="margin-top: -90px">
+                <div class="col-md-7 col-sm-7 text-center" style="margin-top: -90px">
                     <div class="card card-signup">
                         <form class="form" role="form" method="POST" action="{{ route('register') }}">
                             {{ csrf_field() }}
@@ -87,15 +87,32 @@
                         </form>
                     </div>
                 </div>
-            </div>
-        </div>
-        <footer class="footer">
-            <div class="container">
-                <div class="col-lg-12 text-center">
-                    <div class="copyright">SexPrise &copy; {{ date('Y') }}</div>
+                <div class="col-md-5 col-sm-5 text-center" style="margin-top: -90px">
+                    <div class="card card-signup">
+                        <form class="form" role="form" method="POST" action="{{ route('register') }}">
+                            {{ csrf_field() }}
+                            <div class="header header-primary text-center">
+                                <h4>Métodos de Pago</h4>
+                            </div>
+                            <div class="content">
+                                <h3>Discreción</h3>
+                                <img src="/assets/img/xd.png" style="width: 100%;"
+                                     alt="">
+                                <br>
+                                <br>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </footer>
+        </div>
+<footer class="footer">
+    <div class="container">
+        <div class="col-lg-12 text-center">
+            <div class="copyright">SexPrise &copy; {{ date('Y') }}</div>
+        </div>
+    </div>
+</footer>
     </div>
 </div>
 </body>
