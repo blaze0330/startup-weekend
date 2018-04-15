@@ -49,10 +49,10 @@ class CategoriaController extends Controller
 		if ($request->file('image') != null) {
 			$file = $request->file('image');
 			$imageName = $file->getClientOriginalName();
+			$finalName = md5($imageName . time()) . '.' . $file->getClientOriginalExtension();
+			$categoria->image = '/uploads/' . $finalName;
 
-			$categoria->image = '/uploads/images/' . md5($imageName . time()) . '.' . $file->getClientOriginalExtension();
-
-			$file->move(base_path() . '/public/uploads/', md5($imageName . time()) . '.' . $file->getClientOriginalExtension());
+			$file->move(base_path() . '/public/uploads/', $finalName);
 		}
 		$categoria->save();
 
@@ -86,10 +86,10 @@ class CategoriaController extends Controller
 		if ($request->file('image') != null) {
 			$file = $request->file('image');
 			$imageName = $file->getClientOriginalName();
+			$finalName = md5($imageName . time()) . '.' . $file->getClientOriginalExtension();
+			$categoria->image = '/uploads/' . $finalName;
 
-			$categoria->image = '/uploads/images/' . md5($imageName . time()) . '.' . $file->getClientOriginalExtension();
-
-			$file->move(base_path() . '/public/uploads/', md5($imageName . time()) . '.' . $file->getClientOriginalExtension());
+			$file->move(base_path() . '/public/uploads/', $finalName);
 		}
 		$categoria->save();
 		Session::flash('message', 'Correcto, los datos de la categoría han sido cambiados con éxito.');

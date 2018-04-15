@@ -44,6 +44,15 @@
             font-size: 13pt;
             text-transform: uppercase;
         }
+
+        .categoryItem {
+            cursor: pointer;
+            transition: all 0.5s linear;
+        }
+
+        .categoryItem:hover {
+            background: white;
+        }
     </style>
 
     <!--ABOUT-->
@@ -53,49 +62,36 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-12 col-xs-12 col-md-12 text-center">
+                            <div class="sexCategories">
+                                @foreach(\App\Models\Admin\Categoria::get() as $categoria)
+                                    <div class="col-md-2">
+                                        <div class="categoryItem">
+                                            <img src="{{ $categoria->image }}" alt="Categoría"/>
+                                            <div class="categoryName">
+                                            <!--{{ $categoria->name }}-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                            <div class="clearfix"></div>
+                            <hr>
                             <div class="sexItems">
-                                <div class="col-md-4">
-                                    <div class="sexItem">
-                                        <div class="sexItemImage">
-                                            <img src="https://www.jugueterosa.com/media/catalog/product/cache/1/small_image/266x299/9df78eab33525d08d6e5fb8d27136e95/v/i/vibrador_con_estimulador_de_clitoris_rosa.jpg"
-                                                 alt="product">
-                                        </div>
-                                        <div class="sexItemText">
-                                            Vibrador con Estimulador<br>de Clitoris Rosa
-                                        </div>
-                                        <div class="sexItemCheckbox">
+                                @foreach (\App\Models\Admin\Producto::get() as $producto)
+                                    <div class="col-md-4">
+                                        <div class="sexItem">
+                                            <div class="sexItemImage">
+                                                <img src="{{ $producto->image }}" style="height: 250px;" alt="product">
+                                            </div>
+                                            <div class="sexItemText">
+                                                {{ $producto->name }}
+                                            </div>
+                                            <div class="sexItemCheckbox">
 
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="sexItem">
-                                        <div class="sexItemImage">
-                                            <img src="https://www.jugueterosa.com/media/catalog/product/cache/1/small_image/266x299/9df78eab33525d08d6e5fb8d27136e95/s/h/shunga_pintura_corporal_de_chocolate.jpg"
-                                                 alt="product">
-                                        </div>
-                                        <div class="sexItemText">
-                                            Shunga pintura corporal<br>de chocolate
-                                        </div>
-                                        <div class="sexItemCheckbox">
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="sexItem">
-                                        <div class="sexItemImage">
-                                            <img src="https://www.jugueterosa.com/media/catalog/product/cache/1/small_image/266x299/9df78eab33525d08d6e5fb8d27136e95/h/u/huevo_vibrador_10_velocidades_control_remoto_lila_grande.jpg"
-                                                 alt="product">
-                                        </div>
-                                        <div class="sexItemText">
-                                            Huevo vibrador 10 velocidades<br>control remoto lila grande
-                                        </div>
-                                        <div class="sexItemCheckbox">
-
-                                        </div>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
                             <div class="clearfix"></div>
                             <br><br>

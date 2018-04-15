@@ -52,10 +52,10 @@ class ProductoController extends Controller
 		if ($request->file('image') != null) {
 			$file = $request->file('image');
 			$imageName = $file->getClientOriginalName();
+			$finalName = md5($imageName . time()) . '.' . $file->getClientOriginalExtension();
+			$producto->image = '/uploads/' . $finalName;
 
-			$producto->image = '/uploads/images/' . md5($imageName . time()) . '.' . $file->getClientOriginalExtension();
-
-			$file->move(base_path() . '/public/uploads/', md5($imageName . time()) . '.' . $file->getClientOriginalExtension());
+			$file->move(base_path() . '/public/uploads/', $finalName);
 		}
 		$producto->save();
 
@@ -90,10 +90,10 @@ class ProductoController extends Controller
 		if ($request->file('image') != null) {
 			$file = $request->file('image');
 			$imageName = $file->getClientOriginalName();
+			$finalName = md5($imageName . time()) . '.' . $file->getClientOriginalExtension();
+			$producto->image = '/uploads/' . $finalName;
 
-			$producto->image = '/uploads/images/' . md5($imageName . time()) . '.' . $file->getClientOriginalExtension();
-
-			$file->move(base_path() . '/public/uploads/', md5($imageName . time()) . '.' . $file->getClientOriginalExtension());
+			$file->move(base_path() . '/public/uploads/', $finalName);
 		}
 
 		$producto->save();

@@ -54,10 +54,10 @@ class PaqueteController extends Controller
 		if ($request->file('image') != null) {
 			$file = $request->file('image');
 			$imageName = $file->getClientOriginalName();
+			$finalName = md5($imageName . time()) . '.' . $file->getClientOriginalExtension();
+			$paquete->image = '/uploads/' . $finalName;
 
-			$paquete->image = '/uploads/images/' . md5($imageName . time()) . '.' . $file->getClientOriginalExtension();
-
-			$file->move(base_path() . '/public/uploads/', md5($imageName . time()) . '.' . $file->getClientOriginalExtension());
+			$file->move(base_path() . '/public/uploads/', $finalName);
 		}
 		$paquete->save();
 
@@ -106,10 +106,10 @@ class PaqueteController extends Controller
 		if ($request->file('image') != null) {
 			$file = $request->file('image');
 			$imageName = $file->getClientOriginalName();
+			$finalName = md5($imageName . time()) . '.' . $file->getClientOriginalExtension();
+			$paquete->image = '/uploads/' . $finalName;
 
-			$paquete->image = '/uploads/images/' . md5($imageName . time()) . '.' . $file->getClientOriginalExtension();
-
-			$file->move(base_path() . '/public/uploads/', md5($imageName . time()) . '.' . $file->getClientOriginalExtension());
+			$file->move(base_path() . '/public/uploads/', $finalName);
 		}
 
 		$paquete->save();
