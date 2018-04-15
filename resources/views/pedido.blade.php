@@ -104,6 +104,7 @@
                                 <hr>
                                 <h3>Productos</h3>
                                 <div class="sexItems">
+									<?php $i = 0;?>
                                     @foreach ($productos as $producto)
                                         <div class="col-md-4">
                                             <div class="sexItem">
@@ -119,6 +120,12 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        @if ($i == 2)
+                                            <div class="clearfix"></div>
+                                            <br>
+                                            <?php $i = -1; ?>
+                                        @endif
+										<?php $i++; ?>
                                     @endforeach
                                 </div>
                                 <div class="clearfix"></div>
