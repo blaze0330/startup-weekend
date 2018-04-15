@@ -25,7 +25,7 @@
                             </div>
                             <div class="content">
                                 <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                                    <input type="text" placeholder="Nombre"
+                                    <input type="text" placeholder="Nombre / Pseudónimo / Apodo"
                                            class="form-control underline-input" name="name"
                                            value="{{ old('name') }}" required>
                                     @if ($errors->has('name'))
