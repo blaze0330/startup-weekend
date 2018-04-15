@@ -97,6 +97,12 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="clearfix"></div>
+                            <br><br>
+                            <div class="btn-area">
+                                <a class="csi-btn csi-btn-brand"
+                                   href="/register">REALIZAR COMPRA</a>
+                            </div>
                         </div>
                     </div>
                 </div><!-- //.CONTAINER -->

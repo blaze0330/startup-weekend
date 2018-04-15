@@ -16,7 +16,7 @@
          style="background-image: url('{{ url('/assets/images/login-bg.jpg') }}'); background-size: cover; background-position: top center;">
         <div class="container">
             <div class="row">
-                <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 text-center">
+                <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 text-center" style="margin-top: -90px">
                     <div class="card card-signup">
                         <form class="form" role="form" method="POST" action="{{ route('register') }}">
                             {{ csrf_field() }}
@@ -79,6 +79,10 @@
                                 <button type="submit" class="btn btn-primary btn-raised">Registrarme
                                     <div class="ripple-container"></div>
                                 </button>
+                                <br>
+                                <a href="/login" style="color: black">Ya tengo una cuenta</a>
+                                <br>
+                                <br>
                             </div>
                         </form>
                     </div>

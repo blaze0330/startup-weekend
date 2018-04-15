@@ -54,6 +54,7 @@
                                 <button type="submit" class="btn btn-primary btn-raised">Ingresar
                                     <div class="ripple-container"></div>
                                 </button>
+                                <a href="/register" class="btn btn-success btn-raised">Registro</a>
                             </div>
                         </form>
                     </div>
@@ -63,7 +64,7 @@
         <footer class="footer">
             <div class="container">
                 <div class="col-lg-12 text-center">
-                    <div class="copyright">SexPrise  &copy; {{ date('Y') }}</div>
+                    <div class="copyright">SexPrise &copy; {{ date('Y') }}</div>
                 </div>
             </div>
         </footer>
